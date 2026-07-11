@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Parallax-1</title>
+</head>
+<body>
+    <header>
+
+        <!------------------------------------- Logo -------------------------------------->
+        <div class="logo"><img src="Logo.png" alt="burnitup"></div>
+
+        <!------------------------------------- NavBar ------------------------------------>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        
+    </header>
+
+    <!-------------------------------- Parallax Images -------------------------------->
+        <section>
+            <img class="stars" src="stars.png" id="stars">
+            <img class="moon" src="moon.png" id="moon">
+            <img class="mountains_behind" src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Vishal Katarha</h2>
+            <a href="#Details" id="btn" class="btn">Explore</a>
+            <img class="mountains_front" src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2 id="Details">Vishal's Parallax Scroll</h2>
+            <p>
+                UI/UX Designer or Web Developer / Graphic Designer / Motion Graphics Artist / Game Developer at your organization. With a strong blend of creative and technical expertise, I bring experience across design, user experience, animation, and web development.
+
+            </p>
+            <br>
+            <p>
+                I have over 3 years of experience as a Graphic Designer and Motion Graphics Artist, working with tools like Adobe After Effects, Premiere Pro, Photoshop, Illustrator, and DaVinci Resolve. I have created engaging visual content, animations, and video edits that enhance brand presence and user engagement.
+
+            </p>
+            <br>
+            <p>
+                In addition, I have worked as a 3D Designer, VFX/FX Artist, and Game Developer using Blender, Maya, Cinema 4D, Unreal Engine, and Unity (AR/VR with C#), delivering high-quality creative outputs.
+            </p>
+            <br>
+            <p>
+                On the technical side, I have experience as a Full Stack MERN Developer, building responsive and dynamic web applications using React.js, Node.js, Express.js, and MongoDB. I am also skilled in HTML, CSS, JavaScript, MySQL, Python, Git, and GitHub, which allows me to bridge the gap between design and development.
+
+            </p>
+        </div>
+        
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll',function() {
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_front.style.top = value * 0.1 + 'px';
+                text.style.marginRight = value * 2 + 'px';
+                btn.style.marginTop = value * 2 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+</body>
+</html>
